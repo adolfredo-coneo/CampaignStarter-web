@@ -1,1 +1,13 @@
 yarn create react-app campaignstarter-web --template typescript
+
+//web3
+yarn add web3
+
+//ganache-cli
+yarn add ganache-cli
+
+//mocha
+yarn add mocha
+
+//solc
+yarn add solc
