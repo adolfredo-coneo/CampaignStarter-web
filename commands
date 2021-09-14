@@ -8,6 +8,15 @@ yarn add ganache-cli
 
 //mocha
 yarn add mocha
+yarn add --dev @types/mocha
 
 //solc
 yarn add solc
+
+//GIT
+git init
+git add .
+git commit -m "Initializing Repo"
+git branch -M main
+git remote add origin https://github.com/adolfredo-coneo/CampaignStarter-web.git
+git push -u origin main
