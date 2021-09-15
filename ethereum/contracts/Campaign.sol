@@ -36,7 +36,7 @@ contract Compaign {
     
     address public manager;
     mapping(uint => Request) public requests;
-    mapping(address => bool) approvers;
+    mapping(address => bool) public approvers;
     uint public approversCount;
     uint public minimumContribution;
     uint public numRequests;
