@@ -122,5 +122,4 @@ describe('Campaigns', () => {
     balance = parseFloat(balance);
     assert(balance > 104);
   });
-  
 });

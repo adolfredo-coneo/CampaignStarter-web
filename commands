@@ -13,6 +13,9 @@ yarn add --dev @types/mocha
 //solc
 yarn add solc
 
+//@truffle/hdwallet-provider
+yarn add @truffle/hdwallet-provider
+
 //GIT
 git init
 git add .
