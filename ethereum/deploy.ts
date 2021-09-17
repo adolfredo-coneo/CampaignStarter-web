@@ -1,5 +1,5 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const util = require('util')
+const util = require('util');
 
 const Web3 = require('web3');
 const compiledFactory = require('./build/CompaignFactory.json');
@@ -18,21 +18,17 @@ const deploy = async () => {
 
   console.log('Attempting to deploy from account', accounts[0]);
 
-  const contract = await new web3.eth.Contract(factoryAbi)
-    .deploy({
-      data: '0x' + bytecode
-    })
-    .send({
-      from: accounts[0],
-      gas: '1000000',
-      gasPrice: '5000000',
-    });
+  try {
+    const factory = await new web3.eth.Contract(factoryAbi)
+      .deploy({
+        data: '0x' + bytecode,
+      })
+      .send({ from: accounts[0], gas: 4000000 });
 
-    //console.log(util.inspect(abi, {showHidden: false, depth: null}));
-    console.log('Contract deployed to', contract.options.address);
-
+    console.log('Contract deployed at', factory.options.address);
+  } catch (error) {
+    console.log('Error deploying', error);
+  }
 };
 
 deploy();
-
-//.send({ gas: '1000000', gasPrice: '5000000000', from: accounts[0] });
